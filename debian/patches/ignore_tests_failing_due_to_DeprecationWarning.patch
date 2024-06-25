@@ -1,0 +1,35 @@
+Description: Ignore two tests which are bound to fail due to a DeprecationWarning in
+             Python3.12 which is caused by python-dateutil
+Bug-Debian: https://bugs.debian.or/1058414
+Author: Andreas Tille <tille@debian.org>
+Last-Update: Thu, 08 Feb 2024 17:01:40 +0100
+Forwarded: not-needed
+
+--- python-itsdangerous.orig/tests/test_itsdangerous/test_timed.py
++++ python-itsdangerous/tests/test_itsdangerous/test_timed.py
+@@ -4,7 +4,12 @@
+ from functools import partial
+ 
+ import pytest
+-from freezegun import freeze_time
++import sys
++if sys.version_info > (3, 12):
++    pytestmark = pytest.mark.skipif(reason="For Python3 >= 3.12 dateutils throws DeprecationWarning which breaks the following tests which are ignored here")
++    pass
++else:
++    from freezegun import freeze_time
+ 
+ from itsdangerous.exc import BadTimeSignature
+ from itsdangerous.exc import SignatureExpired
+--- python-itsdangerous.orig/tests/test_itsdangerous/test_url_safe.py
++++ python-itsdangerous/tests/test_itsdangerous/test_url_safe.py
+@@ -1,6 +1,9 @@
+ from functools import partial
+ 
+ import pytest
++import sys
++if sys.version_info > (3, 12):
++    pytestmark = pytest.mark.skipif(reason="For Python3 >= 3.12 dateutils throws DeprecationWarning which breaks the following tests which are ignored here")
+ 
+ from itsdangerous.url_safe import URLSafeSerializer
+ from itsdangerous.url_safe import URLSafeTimedSerializer

@@ -4,17 +4,19 @@ Uploaders: Simon Fondrie-Teitler <simonft@riseup.net>, Thomas Goirand <zigo@debi
 Section: python
 Priority: optional
 Build-Depends: debhelper-compat (= 13),
-               dh-python,
+               dh-python, pybuild-plugin-pyproject, python3-flit-scm,
                python3-all,
+               python3-freezegun <!nocheck>,
                python3-pallets-sphinx-themes,
                python3-setuptools,
                python3-sphinx,
                python3-sphinxcontrib-log-cabinet,
-               python3-sphinx-issues
+               python3-sphinx-issues,
+               python3-pytest <!nocheck>,
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-itsdangerous
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-itsdangerous.git
 Homepage: https://itsdangerous.palletsprojects.com/
-Standards-Version: 4.6.0
+Standards-Version: 4.7.0
 Rules-Requires-Root: no
 Testsuite: autopkgtest-pkg-python
 
