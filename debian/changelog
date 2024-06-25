@@ -1,3 +1,58 @@
+python-itsdangerous (2.2.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Refresh patches.
+  * Bump standards-version to 4.7.0.
+  * Run autopkgtest against all supported Python versions.
+  * Fix forward status of Debian patches.
+
+ -- Julien Puydt <jpuydt@debian.org>  Sun, 09 Jun 2024 11:36:13 +0200
+
+python-itsdangerous (2.1.2-4) unstable; urgency=medium
+
+  * Team upload.
+  * Ignore two tests which are bound to fail due to a DeprecationWarning in
+    Python3.12 which is caused by python-dateutil
+    Closes: #1058414
+  * Standards-Version: 4.6.2 (routine-update)
+  * Add salsa-ci file (routine-update)
+
+ -- Andreas Tille <tille@debian.org>  Thu, 08 Feb 2024 17:39:32 +0100
+
+python-itsdangerous (2.1.2-3) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Repository-Browse.
+  * Update standards version to 4.6.1, no changes needed.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Thu, 01 Dec 2022 13:06:04 +0000
+
+python-itsdangerous (2.1.2-2) unstable; urgency=medium
+
+  * Team upload.
+  * [5c9d55f] run upstream tests during build and as autopkgtest
+
+ -- Joseph Nahmias <jello@debian.org>  Sun, 17 Jul 2022 22:44:51 -0400
+
+python-itsdangerous (2.1.2-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Fri, 25 Mar 2022 10:44:21 +0100
+
+python-itsdangerous (2.1.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update dates in debian/copyright.
+
+ -- Julien Puydt <jpuydt@debian.org>  Sun, 13 Mar 2022 19:09:58 +0100
+
+python-itsdangerous (2.1.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Sun, 20 Feb 2022 19:38:23 +0100
+
 python-itsdangerous (2.0.1-1) unstable; urgency=medium
 
   * Rewrite d/watch to work again.

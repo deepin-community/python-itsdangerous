@@ -1,1 +1,2 @@
 no-intersphinx-plugin-in-doc.patch
+ignore_tests_failing_due_to_DeprecationWarning.patch

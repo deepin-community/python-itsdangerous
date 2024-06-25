@@ -2,13 +2,14 @@
 
 export PYBUILD_NAME=itsdangerous
 export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+export PYDEFAULT=`py3versions -d -v`
 
 %:
 	dh $@ --buildsystem=pybuild --with python3,sphinxdoc
 
 override_dh_sphinxdoc:
 ifeq (,$(findstring nodocs, $(DEB_BUILD_OPTIONS)))
-	PYTHONPATH=src python3 -m sphinx -b html docs $(CURDIR)/debian/python-itsdangerous-doc/usr/share/doc/python-itsdangerous-doc/html
+	PYTHONPATH=.pybuild/cpython3_$(PYDEFAULT)_itsdangerous/build/ python3 -m sphinx -b html docs $(CURDIR)/debian/python-itsdangerous-doc/usr/share/doc/python-itsdangerous-doc/html
 	dh_sphinxdoc -O--buildsystem=pybuild
 endif
 

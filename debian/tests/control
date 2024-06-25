@@ -1,0 +1,6 @@
+Tests: upstream
+Depends:
+ python3-all,
+ python3-itsdangerous,
+ python3-freezegun,
+ python3-pytest,
